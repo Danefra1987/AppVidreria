@@ -23,7 +23,8 @@ namespace AppVidreria.ViewModels
                     Id = i,
                     Nombre = Names[i],
                     Descripcion = Descriptions[i],
-                    Imagen = Images[i]
+                    Imagen = Images[i],
+                    Precio= Precio[i]
                 };
                 materialInfo.Add(info);
             }
@@ -43,7 +44,8 @@ namespace AppVidreria.ViewModels
                         Id = i,
                         Nombre = Names[i],
                         Descripcion = Descriptions[i],
-                        Imagen = Images[i]
+                        Imagen = Images[i],
+                        Precio = Precio[i]
                     };
                     materialInfo.Add(info);
                 }
@@ -65,8 +67,8 @@ namespace AppVidreria.ViewModels
           {
              "cotizar.png",
              "vidrieria.png",
-             "cotizar_lapiz.png",
-             "cotizar.png",
+             "home.png",
+             "producto.png",
              "cotizar_lapiz.png",
              "vidrieria.png"
           };
@@ -79,6 +81,15 @@ namespace AppVidreria.ViewModels
             "Espejo de 3mm de grosor",
             "Espejo de 4mm de grosor",
             "Espejo de 6mm de grosor"
+        };
+        string[] Precio = new string[]
+        {
+            "12.56",
+            "15.02",
+            "10,90",
+            "8,90",
+            "4,50",
+            "9.80"
         };
     }
 

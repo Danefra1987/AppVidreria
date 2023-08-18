@@ -2,13 +2,14 @@
 
 namespace AppVidreria.Models
 {
-    public class Material: INotifyPropertyChanged
+    public class Material : INotifyPropertyChanged
     {
         private int id;
         private string nombre;
         private string descripcion;
         private ImageSource imagen;
-        
+        private string precio;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -16,7 +17,6 @@ namespace AppVidreria.Models
         {
 
         }
-
 
         public int Id
         {
@@ -55,7 +55,17 @@ namespace AppVidreria.Models
                 OnPropertyChanged("Image");
             }
         }
-        
+
+        public string Precio
+        {
+            get { return precio; }
+            set {
+
+                precio = value;
+                OnPropertyChanged(Precio);
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string nombre)
         {
