@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppVidreria.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppVidreria"
+    xmlns:views="clr-namespace:AppVidreria.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />-->
+
+    <TabBar>
+        <Tab Title="Home"
+            Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:Home}" />
+        </Tab>
+        <Tab Title="Materiales"
+            Icon="producto.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Materiales}" />
+        </Tab>
+    <Tab Title="Cotizar"
+            Icon="Cotizar_lapiz.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Cotizacion}" />
+        </Tab>
+    </TabBar>
+
+
+    <!--<FlyoutItem>
+        <ShellContent Title="Inicio"
+                     Icon="home.svg"
+                     ContentTemplate="{DataTemplate views:Home}" />
+        <ShellContent Title="Materiales"
+                     Icon="producto.png"
+                     ContentTemplate="{DataTemplate views:Cotizacion}" />
+        <ShellContent Title="Cotizar"
+                     Icon="cotizar.png"
+                     ContentTemplate="{DataTemplate views:Cotizacion}" />
+    </FlyoutItem>-->
+
+</Shell>
