@@ -1,11 +1,14 @@
-﻿namespace AppVidreria;
+﻿using AppVidreria.Utilities;
+using PdfSharpCore.Fonts;
+
+namespace AppVidreria;
 
 public partial class App : Application
 {
 	public App()
 	{
 		InitializeComponent();
-
-		MainPage = new AppShell();
+        GlobalFontSettings.FontResolver = new FileFontResolver();
+        MainPage = new AppShell();
 	}
 }

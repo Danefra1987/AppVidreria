@@ -1,9 +1,11 @@
 ﻿using AppVidreria.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 
 namespace AppVidreria.ViewModels
 {
-    public class MaterialRepository
+    public partial class MaterialRepository 
     {
         /// <summary>
         /// Constructor
@@ -13,7 +15,7 @@ namespace AppVidreria.ViewModels
 
         }
 
-        internal ObservableCollection<Material> GetCategoryInfo()
+        internal ObservableCollection<Material> GetMaterialInfo()
         {
             var materialInfo = new ObservableCollection<Material>();
             for (int i = 0; i < Names.Count(); i++)
@@ -39,9 +41,10 @@ namespace AppVidreria.ViewModels
             {
                 if (Names[i].Contains(strTexto))
                 {
-                    var info = new Material()
+                    var info = new Material()   
                     {
                         Id = i,
+                        Cantidad = 0,
                         Nombre = Names[i],
                         Descripcion = Descriptions[i],
                         Imagen = Images[i],
@@ -52,6 +55,7 @@ namespace AppVidreria.ViewModels
             }
             return materialInfo;
         }
+
 
         string[] Names = new string[]
           {
@@ -86,42 +90,10 @@ namespace AppVidreria.ViewModels
         {
             "12.56",
             "15.02",
-            "10,90",
-            "8,90",
-            "4,50",
+            "10.90",
+            "8.90",
+            "4.50",
             "9.80"
         };
     }
-
-    public class MaterialViewModel
-    {
-        #region Fields
-        private ObservableCollection<Material> categoryList;
-
-        #endregion
-        #region Constructor
-        public MaterialViewModel()
-        {
-            GenerateSource();
-        }
-
-        #endregion
-        #region Properties
-        public ObservableCollection<Material> CategoryList
-        {
-            get { return categoryList; }
-            set { this.categoryList = value; }
-        }
-
-        #endregion
-        #region Generate Source
-        private void GenerateSource()
-        {
-            MaterialRepository categoryinfo = new MaterialRepository();
-            categoryList = categoryinfo.GetCategoryInfo();
-        }
-
-        #endregion
-    }
-
 }
