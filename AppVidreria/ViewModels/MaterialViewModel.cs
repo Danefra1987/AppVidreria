@@ -10,6 +10,7 @@ using PdfSharpCore.Pdf;
 using System.Collections.ObjectModel;
 using Style = MigraDocCore.DocumentObjectModel.Style;
 using Colors = MigraDocCore.DocumentObjectModel.Colors;
+using AppVidreria.Utilities;
 
 namespace AppVidreria.ViewModels
 {
@@ -126,14 +127,18 @@ namespace AppVidreria.ViewModels
 
         public static void SaveDoc(PdfDocument document, string fileName, string path = default)
         {
-            var location = Path.Join(path, fileName);
+            var location = Path.Combine(FileSystem.CacheDirectory, fileName); //Path.Join(path, fileName);
 
             document.Save(location);
             document.Close();
+            EnviarCorreo objCorrero = new EnviarCorreo();
+            string[] correo = new[] { "daneframetal@hotmail.com", "esneider_98@outlook.com" };
+            objCorrero.EnviarCorreoCotizacion(string.Empty, string.Empty, correo);
         }
         public static void SaveDocx(Document document, string fileName, string path = default)
         {
-            var location = Path.Join(path, fileName);
+            //var location = Path.Join(path, fileName);
+            var location = Path.Combine(FileSystem.CacheDirectory, fileName);
             var renderer = new PdfDocumentRenderer(true)
             {
                 Document = document
@@ -143,6 +148,9 @@ namespace AppVidreria.ViewModels
             renderer.RenderDocument();
 
             renderer.Save(location);
+            EnviarCorreo objCorrero = new EnviarCorreo();
+            string[] correo = new[] { "daneframetal@hotmail.com", "esneider_98@outlook.com" };
+            objCorrero.EnviarCorreoCotizacion(string.Empty, string.Empty, correo);
         }
 
         private Document CreateTable()

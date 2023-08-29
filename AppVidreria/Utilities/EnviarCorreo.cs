@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppVidreria.Utilities
 {
-    internal class EnviarCorreo
+    public class EnviarCorreo
     {
         public EnviarCorreo() { 
         
@@ -17,9 +17,9 @@ namespace AppVidreria.Utilities
             if (Email.Default.IsComposeSupported)
             {
 
-                string subject = "Hello friends!";
+                string subject = "Cotizacion";
                 string body = "Esto es una prueba de envio de correo";
-                string[] recipients = new[] { "daneframetal@hotmail.com", "esneider_98@outlook.com" };
+                string[] recipients = strCorreos;
 
                 var message = new EmailMessage
                 {
@@ -30,7 +30,7 @@ namespace AppVidreria.Utilities
                 };
 
                 ///Poner aqui el nombre del archivo pdf 
-                string picturePath = Path.Combine(FileSystem.CacheDirectory, "memories.jpg");
+                string picturePath = Path.Combine(FileSystem.CacheDirectory, "Cotizacion.pdf");
 
                 message.Attachments.Add(new EmailAttachment(picturePath));
 

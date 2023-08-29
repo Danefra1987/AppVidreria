@@ -17,11 +17,15 @@
             Icon="home.svg">
             <ShellContent ContentTemplate="{DataTemplate views:Home}" />
         </Tab>
-        <Tab Title="Materiales"
+        <Tab Title="Productos"
             Icon="producto.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Producto}" />
+        </Tab>
+        <Tab Title="Materiales"
+            Icon="material.png">
             <ShellContent ContentTemplate="{DataTemplate views:Materiales}" />
         </Tab>
-    <Tab Title="Cotizar"
+        <Tab Title="Cotizar"
             Icon="Cotizar_lapiz.png">
             <ShellContent ContentTemplate="{DataTemplate views:Cotizacion}" />
         </Tab>

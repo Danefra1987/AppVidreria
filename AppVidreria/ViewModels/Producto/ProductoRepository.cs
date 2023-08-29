@@ -71,10 +71,10 @@ namespace AppVidreria.ViewModels.Producto
             "Espejo de 4mm de grosor",
             "Espejo de 6mm de grosor"
         };
-        string[] Precio = new string[]
+        decimal[] Precio = new decimal[]
         {
-            "200,50",
-            "300.80"
+            200.50m,
+            300.80m
         };
 
     }

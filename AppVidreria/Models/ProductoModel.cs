@@ -13,7 +13,9 @@ namespace AppVidreria.Models
         private string nombre;
         private string descripcion;
         private ImageSource imagen;
-        private string precio;
+        private decimal largo;
+        private decimal ancho;
+        private decimal precio;
         public ProductoModel()
         {
 
@@ -57,14 +59,36 @@ namespace AppVidreria.Models
             }
         }
 
-        public string Precio
+        public decimal Largo
+        {
+            get { return largo; }
+            set
+            {
+
+                largo = value;
+                OnPropertyChanged("Largo");
+            }
+        }
+
+        public decimal Ancho
+        {
+            get { return ancho; }
+            set
+            {
+
+                ancho = value;
+                OnPropertyChanged("Ancho");
+            }
+        }
+
+        public decimal Precio
         {
             get { return precio; }
             set
             {
 
                 precio = value;
-                OnPropertyChanged(Precio);
+                OnPropertyChanged("Precio");
             }
         }
 

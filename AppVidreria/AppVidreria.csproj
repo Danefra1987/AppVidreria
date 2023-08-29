@@ -57,6 +57,7 @@
 	  <None Remove="Resources\Images\Cotizar.png" />
 	  <None Remove="Resources\Images\cotizar_lapiz.png" />
 	  <None Remove="Resources\Images\home.svg" />
+	  <None Remove="Resources\Images\material.png" />
 	  <None Remove="Resources\Images\producto.png" />
 	  <None Remove="Resources\Images\vidrieria.png" />
 	</ItemGroup>
@@ -82,6 +83,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Materiales.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Producto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
