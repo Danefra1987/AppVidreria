@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppVidreria.ViewModels.Producto
+namespace AppVidreria.ViewModels
 {
     public class ProductoRepository
     {
@@ -14,12 +14,12 @@ namespace AppVidreria.ViewModels.Producto
         {
 
         }
-        internal ObservableCollection<ProductoModel> GetProductoInfo()
+        internal ObservableCollection<Producto> GetProductoInfo()
         {
-            var productoInfo = new ObservableCollection<ProductoModel>();
+            var productoInfo = new ObservableCollection<Producto>();
             for (int i = 0; i < Names.Count(); i++)
             {
-                var info = new ProductoModel()
+                var info = new Producto()
                 {
                     Id = i,
                     Nombre = Names[i],
@@ -32,15 +32,15 @@ namespace AppVidreria.ViewModels.Producto
             return productoInfo;
         }
 
-        internal ObservableCollection<ProductoModel> GetProductoSearchResults(string strTexto)
+        internal ObservableCollection<Producto> GetProductoSearchResults(string strTexto)
         {
-            var productoInfo = new ObservableCollection<ProductoModel>();
+            var productoInfo = new ObservableCollection<Producto>();
 
             for (int i = 0; i < Names.Count(); i++)
             {
                 if (Names[i].Contains(strTexto))
                 {
-                    var info = new ProductoModel()
+                    var info = new Producto()
                     {
                         Id = i,
                         Nombre = Names[i],
@@ -79,5 +79,5 @@ namespace AppVidreria.ViewModels.Producto
 
     }
 
-   
+
 }

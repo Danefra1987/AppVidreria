@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AppVidreria.Models
 {
-    public class ProductoModel : INotifyPropertyChanged
+    public class Producto : INotifyPropertyChanged
     {
         private int id;
         private string nombre;
@@ -16,7 +16,7 @@ namespace AppVidreria.Models
         private decimal largo;
         private decimal ancho;
         private decimal precio;
-        public ProductoModel()
+        public Producto()
         {
 
         }
