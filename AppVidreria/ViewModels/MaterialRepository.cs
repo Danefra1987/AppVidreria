@@ -26,7 +26,7 @@ namespace AppVidreria.ViewModels
                     Nombre = Names[i],
                     Descripcion = Descriptions[i],
                     Imagen = Images[i],
-                    Precio= Precio[i]
+                    PrecioUnidad= decimal.Parse(Precio[i])
                 };
                 materialInfo.Add(info);
             }
@@ -48,13 +48,14 @@ namespace AppVidreria.ViewModels
                         Nombre = Names[i],
                         Descripcion = Descriptions[i],
                         Imagen = Images[i],
-                        Precio = Precio[i]
+                        PrecioUnidad = decimal.Parse(Precio[i])
                     };
                     materialInfo.Add(info);
                 }
             }
             return materialInfo;
         }
+
 
 
         string[] Names = new string[]

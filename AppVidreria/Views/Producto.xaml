@@ -52,12 +52,12 @@
                                                 <ColumnDefinition Width="Auto"/>
                                             </Grid.ColumnDefinitions>
                                             <Entry Grid.Column="0" Grid.Row="0" ClearButtonVisibility="WhileEditing"
-                                                       x:Name="txtLargo"
+                                                       x:Name="txtAlto"
                                                        Keyboard="Numeric"
-                                                       Text="{Binding Largo}"
+                                                       Text="{Binding Alto}"
                                                        HeightRequest="37" 
                                                        WidthRequest="100" 
-                                                       Placeholder="Largo en metros"/>
+                                                       Placeholder="Alto en metros"/>
                                             <Entry Grid.Column="0" Grid.Row="1"  ClearButtonVisibility="WhileEditing"
                                                        x:Name="txtAncho" 
                                                        Keyboard="Numeric"
@@ -69,7 +69,6 @@
                                     </StackLayout>
 
                                     <StackLayout Grid.Column="2"  Orientation="Vertical">
-                                        <Label  Text="{Binding Precio, StringFormat='$ {0}'}" FontSize="Subtitle" FontAttributes="Bold" TextColor="#1d94ab" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" />
                                         <Grid WidthRequest="120" HeightRequest="70">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="Auto" />
@@ -122,13 +121,13 @@
                                             <Label.Text>
                                                 <MultiBinding StringFormat="{}{0} X {1} m2">
                                                     <Binding Path="Ancho" />
-                                                    <Binding Path="Largo" />
+                                                    <Binding Path="Alto" />
                                                 </MultiBinding>
                                             </Label.Text>
                                         </Label>
                                     </StackLayout>
                                     <StackLayout Grid.Column="2"  Orientation="Vertical">
-                                        <Label  Text="{Binding Largo}" FontSize="Subtitle" FontAttributes="Bold" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" />
+                                        <Label  Text="{Binding Precio, StringFormat= '$ {0}'}" FontSize="Subtitle" FontAttributes="Bold" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" />
                                     </StackLayout>
                                 </Grid>
                             </Border>

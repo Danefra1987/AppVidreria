@@ -25,7 +25,8 @@ namespace AppVidreria.ViewModels
                     Nombre = Names[i],
                     Descripcion = Descriptions[i],
                     Imagen = Images[i],
-                    Precio = Precio[i]
+                    Precio = Precio[i],
+                    Materiales = GetListaMateriales()
                 };
                 productoInfo.Add(info);
             }
@@ -46,12 +47,34 @@ namespace AppVidreria.ViewModels
                         Nombre = Names[i],
                         Descripcion = Descriptions[i],
                         Imagen = Images[i],
-                        Precio = Precio[i]
+                        Precio = Precio[i],
+                        Materiales = GetListaMateriales()
                     };
                     productoInfo.Add(info);
                 }
             }
             return productoInfo;
+        }
+        internal List<Material> GetListaMateriales()
+        {
+            List<Material> listaMateriales = new List<Material>();
+            listaMateriales.Add(new Material()
+            {
+                Id = 1,
+                Nombre = "Vara de metal",
+                UnidadMedida = "m",
+                PrecioUnidad = decimal.Parse("2.5"),
+
+            });
+            listaMateriales.Add(new Material()
+            {
+                Id = 1,
+                Nombre = "Vidrio",
+                UnidadMedida = "m2",
+                PrecioUnidad = decimal.Parse("15.7"),
+
+            });
+            return listaMateriales;
         }
 
         string[] Names = new string[]

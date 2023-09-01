@@ -57,25 +57,42 @@ namespace AppVidreria.ViewModels
         {
             AgregarProductoACotizacion(producto);
             producto.Ancho = 0;
-            producto.Largo = 0;
+            producto.Alto = 0;
         }
 
-        [RelayCommand]
-        private async void MostrarCotizacionProductoEvent()
-        {
-            await Application.Current.MainPage.Navigation.PushAsync(new VistaCotizacionProductos(cotizacionProductosList));
-        }
 
         private void AgregarProductoACotizacion(Producto producto) 
         {
             Producto prod = new Producto() { 
                 Id = 1,
                 Nombre = producto.Nombre,
-                Largo = producto.Largo,
+                Alto = producto.Alto,
                 Ancho = producto.Ancho,
-                Precio = producto.Precio,
+                Precio = 0,
+                Materiales = producto.Materiales,
+
             };
+            prod.Precio = CalcularPrecioProducto(producto);
             CotizacionProductosList.Add(prod);
+        }
+
+        private decimal CalcularPrecioProducto(Producto producto)
+        {
+            decimal precio = 0;
+
+            foreach (Material material in producto.Materiales) 
+            {
+                if (material.UnidadMedida == "m")
+                {
+                    precio = precio + ((2 * producto.Ancho + 2 * producto.Alto) * material.PrecioUnidad);
+                }
+                else
+                {
+                    precio = precio + ((producto.Ancho * producto.Alto) * material.PrecioUnidad);
+                }
+
+            }
+            return precio;
         }
 
         #endregion

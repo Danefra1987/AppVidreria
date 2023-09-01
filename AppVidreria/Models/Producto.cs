@@ -13,14 +13,24 @@ namespace AppVidreria.Models
         private string nombre;
         private string descripcion;
         private ImageSource imagen;
-        private decimal largo;
+        private decimal alto;
         private decimal ancho;
         private decimal precio;
+        private List<Material> materiales;
         public Producto()
         {
 
         }
 
+        public List<Material> Materiales
+        {
+            get { return materiales; }
+            set
+            {
+                materiales = value;
+                OnPropertyChanged("Materiales");
+            }
+        }
         public int Id
         {
             get { return id; }
@@ -59,14 +69,14 @@ namespace AppVidreria.Models
             }
         }
 
-        public decimal Largo
+        public decimal Alto
         {
-            get { return largo; }
+            get { return alto; }
             set
             {
 
-                largo = value;
-                OnPropertyChanged("Largo");
+                alto = value;
+                OnPropertyChanged("Alto");
             }
         }
 

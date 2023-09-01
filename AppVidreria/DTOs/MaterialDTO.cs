@@ -13,5 +13,7 @@ namespace AppVidreria.DTOs
 
         public int cantidad;
 
+        public string unidadMedida;
+
     }
 }

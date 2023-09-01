@@ -81,7 +81,7 @@ namespace AppVidreria.ViewModels
                     id = MaterialesList.ElementAt(i).Id,
                     nombre = MaterialesList.ElementAt(i).Nombre,
                     descripcion = MaterialesList.ElementAt(i).Descripcion,
-                    precio = decimal.Parse(MaterialesList.ElementAt(i).Precio),
+                    precio = MaterialesList.ElementAt(i).PrecioUnidad,
                     cantidad = 0,
                 });
             } 

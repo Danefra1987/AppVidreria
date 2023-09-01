@@ -9,7 +9,8 @@ namespace AppVidreria.Models
         private string nombre;
         private string descripcion;
         private ImageSource imagen;
-        private string precio;
+        private decimal precioUnidad;
+        private string unidadMedida;
 
         /// <summary>
         /// Constructor
@@ -48,6 +49,15 @@ namespace AppVidreria.Models
                 OnPropertyChanged("Nombre");
             }
         }
+        public string UnidadMedida
+        {
+            get { return unidadMedida; }
+            set
+            {
+                unidadMedida = value;
+                OnPropertyChanged("UnidadMedida");
+            }
+        }
         public string Descripcion
         {
             get { return descripcion; }
@@ -68,13 +78,13 @@ namespace AppVidreria.Models
             }
         }
 
-        public string Precio
+        public decimal PrecioUnidad
         {
-            get { return precio; }
+            get { return precioUnidad; }
             set {
 
-                precio = value;
-                OnPropertyChanged(Precio);
+                precioUnidad = value;
+                OnPropertyChanged("PrecioUnidad");
             }
         }
 
