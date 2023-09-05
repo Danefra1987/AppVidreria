@@ -60,6 +60,17 @@ namespace AppVidreria.ViewModels
             producto.Alto = 0;
         }
 
+        [RelayCommand]
+        private async void CrearPantallaCotizacionProductosEvent(Producto producto)
+        {
+            List<Producto> lstProducto = new List<Producto>();
+            foreach (Producto p in CotizacionProductosList)
+            {
+                lstProducto.Add(p);
+            }
+            await App.Current.MainPage.Navigation.PushAsync(new VistaCotizacionProductos(lstProducto));
+        }
+
 
         private void AgregarProductoACotizacion(Producto producto) 
         {

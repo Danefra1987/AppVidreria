@@ -6,17 +6,18 @@ namespace AppVidreria.Views;
 
 public partial class CotizacionProductos : ContentPage
 {
-    public List<Producto> Productos;
-    private ObservableCollection<Models.Producto> cotizacionProductosList;
 
-    public CotizacionProductos(List<Producto> _productos)
-	{
-        Productos = _productos;
-        InitializeComponent();
-	}
+    private List<Models.Producto> cotizacionProductosList { get; set; }
 
-    public CotizacionProductos(ObservableCollection<Models.Producto> cotizacionProductosList)
+    public List<Models.Producto> CotizacionProductosList
     {
+        get { return cotizacionProductosList; }
+        set { this.cotizacionProductosList = value; }
+    }
+    public CotizacionProductos(List<Models.Producto> cotizacionProductosList)
+    {
+        InitializeComponent();
         this.cotizacionProductosList = cotizacionProductosList;
+        lvCotizacionProductos.ItemsSource = this.cotizacionProductosList;
     }
 }

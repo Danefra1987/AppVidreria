@@ -15,7 +15,6 @@
         <Grid RowSpacing="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -90,52 +89,11 @@
 
                 </CollectionView>
             </ScrollView>
-            <StackLayout Grid.Row="1">
-                <Label Text="Productos a cotizar"  FontSize="Subtitle" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" ></Label>
+            <StackLayout Grid.Row="1" Orientation="Vertical" BackgroundColor="WhiteSmoke" Padding="10" Margin="10,10" VerticalOptions="EndAndExpand">
+                <Button Text="Cotizar" HorizontalOptions="FillAndExpand" TextColor="White" 
+                    Command="{Binding Source={x:Reference this}, Path=BindingContext.CrearPantallaCotizacionProductosEventCommand}"
+                        ></Button>
             </StackLayout>
-            
-            <ScrollView Grid.Row="2" VerticalOptions="FillAndExpand" Orientation="Vertical">
-                <CollectionView SelectionMode="None" x:Name="lvCotizacionProductos" ItemsSource="{Binding CotizacionProductosList}" HorizontalOptions="FillAndExpand" Margin="10,10" >
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="12"/>
-                    </CollectionView.ItemsLayout>
-
-                    <CollectionView.ItemTemplate>
-                        
-                        <DataTemplate>
-                            <Border Padding="0,5,5,7" HorizontalOptions="FillAndExpand">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="7,7,7,7"/>
-                                </Border.StrokeShape>
-                                <Grid ColumnSpacing="7" HorizontalOptions="FillAndExpand">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*" />
-                                        <ColumnDefinition Width="3*" />
-                                        <ColumnDefinition Width="2*" />
-                                    </Grid.ColumnDefinitions>
-                                    <StackLayout Grid.Column="0"  Orientation="Vertical">
-                                        <Label  Text="{Binding Nombre}" FontSize="Subtitle" FontAttributes="Bold" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" />
-                                    </StackLayout>
-                                    <StackLayout Grid.Column="1"  Orientation="Vertical">
-                                        <Label FontSize="Subtitle" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
-                                            <Label.Text>
-                                                <MultiBinding StringFormat="{}{0} X {1} m2">
-                                                    <Binding Path="Ancho" />
-                                                    <Binding Path="Alto" />
-                                                </MultiBinding>
-                                            </Label.Text>
-                                        </Label>
-                                    </StackLayout>
-                                    <StackLayout Grid.Column="2"  Orientation="Vertical">
-                                        <Label  Text="{Binding Precio, StringFormat= '$ {0}'}" FontSize="Subtitle" FontAttributes="Bold" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" />
-                                    </StackLayout>
-                                </Grid>
-                            </Border>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-
-                </CollectionView>
-            </ScrollView>
         </Grid>
 
     </StackLayout>
