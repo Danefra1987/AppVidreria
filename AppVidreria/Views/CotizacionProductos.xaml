@@ -4,7 +4,8 @@
              x:Class="AppVidreria.Views.CotizacionProductos"
              x:Name="this"
              Title="Cotización Productos">
-    <StackLayout>
+    <StackLayout x:Name="Capture">
+        
         <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
             <CollectionView SelectionMode="None" x:Name="lvCotizacionProductos" HorizontalOptions="FillAndExpand" Margin="10,10" >
                 <CollectionView.ItemsLayout>
@@ -46,5 +47,27 @@
 
             </CollectionView>
         </ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Column="0"  Orientation="Vertical">
+                <Label x:Name="txtTotal"  Text="Total: " FontSize="28" FontAttributes="Bold" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" />
+            </StackLayout>
+            <StackLayout Grid.Column="1"  Orientation="Vertical">
+                <Label x:Name="txtValorTotal" Text="" FontSize="28" FontAttributes="Bold" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" />
+            </StackLayout>
+            
+        </Grid>
+        
+        <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Button x:Name="BtnCompartir" Text="Compartir" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Clicked="BtnCompartir_Clicked" />
+        </StackLayout>
     </StackLayout>
+    
 </ContentPage>

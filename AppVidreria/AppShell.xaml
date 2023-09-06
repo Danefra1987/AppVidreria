@@ -25,10 +25,10 @@
             Icon="material.png">
             <ShellContent ContentTemplate="{DataTemplate views:Materiales}" />
         </Tab>
-        <Tab Title="Cotizar"
+        <!--<Tab Title="Cotizar"
             Icon="Cotizar_lapiz.png">
             <ShellContent ContentTemplate="{DataTemplate views:Cotizacion}" />
-        </Tab>
+        </Tab>-->
     </TabBar>
 
 
